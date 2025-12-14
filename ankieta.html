@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Maciej Łapiński">
+    <meta name="description" content="Ankieta i formularz opinii o 7 Cudach Świata - podziel się swoją opinią">
+    <meta name="keywords" content="ankieta, formularz, opinia, 7 cudów świata, głosowanie">
+    <title>Ankieta - 7 Cudów świata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        <h1>7 Cudów świata</h1>
+    </a>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="opisy.html">Opisy</a></li>
+        <li><a href="informacje.html">Informacje</a></li>
+        <li><a href="ankieta.html">Ankieta</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="ankieta">
+        <h2>Ankieta - Twoja opinia o 7 Cudach Świata</h2>
+        
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="wiek">Wiek:</label>
+                <input type="number" id="wiek" name="wiek" min="1" max="120">
+            </div>
+
+            <div class="form-group">
+                <label>Który cud świata chciałbyś odwiedzić?</label>
+                <input type="radio" id="wielki-mur" name="cud" value="wielki-mur">
+                <label for="wielki-mur">Wielki Mur Chiński</label><br>
+                
+                <input type="radio" id="petra" name="cud" value="petra">
+                <label for="petra">Petra</label><br>
+                
+                <input type="radio" id="chrystus" name="cud" value="chrystus">
+                <label for="chrystus">Chrystus Odkupiciel</label><br>
+                
+                <input type="radio" id="machu-picchu" name="cud" value="machu-picchu">
+                <label for="machu-picchu">Machu Picchu</label><br>
+                
+                <input type="radio" id="chichen" name="cud" value="chichen">
+                <label for="chichen">Chichen Itza</label><br>
+                
+                <input type="radio" id="koloseum" name="cud" value="koloseum">
+                <label for="koloseum">Koloseum</label><br>
+                
+                <input type="radio" id="tadz" name="cud" value="tadz">
+                <label for="tadz">Tadż Mahal</label>
+            </div>
+
+            <div class="form-group">
+                <label>Które cuda świata już odwiedziłeś? (można wybrać kilka)</label>
+                <input type="checkbox" id="odw-wielki-mur" name="odwiedzone[]" value="wielki-mur">
+                <label for="odw-wielki-mur">Wielki Mur Chiński</label><br>
+                
+                <input type="checkbox" id="odw-petra" name="odwiedzone[]" value="petra">
+                <label for="odw-petra">Petra</label><br>
+                
+                <input type="checkbox" id="odw-chrystus" name="odwiedzone[]" value="chrystus">
+                <label for="odw-chrystus">Chrystus Odkupiciel</label><br>
+                
+                <input type="checkbox" id="odw-machu-picchu" name="odwiedzone[]" value="machu-picchu">
+                <label for="odw-machu-picchu">Machu Picchu</label><br>
+                
+                <input type="checkbox" id="odw-chichen" name="odwiedzone[]" value="chichen">
+                <label for="odw-chichen">Chichen Itza</label><br>
+                
+                <input type="checkbox" id="odw-koloseum" name="odwiedzone[]" value="koloseum">
+                <label for="odw-koloseum">Koloseum</label><br>
+                
+                <input type="checkbox" id="odw-tadz" name="odwiedzone[]" value="tadz">
+                <label for="odw-tadz">Tadż Mahal</label><br>
+                
+                <input type="checkbox" id="odw-zadne" name="odwiedzone[]" value="zadne">
+                <label for="odw-zadne">Nie odwiedziłem żadnego</label>
+            </div>
+
+            <div class="form-group">
+                <label for="ocena">Oceń stronę (1-10):</label>
+                <input type="range" id="ocena" name="ocena" min="1" max="10" value="5">
+                <output for="ocena" id="ocena-output">5</output>
+            </div>
+
+            <div class="form-group">
+                <label for="komentarz">Twoje uwagi i komentarze:</label>
+                <textarea id="komentarz" name="komentarz" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Wyślij</button>
+                <button type="reset">Wyczyść</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Maciej Łapiński, klasa 2tb</p>
+</footer>
+
+<script>
+    const slider = document.getElementById('ocena');
+    const output = document.getElementById('ocena-output');
+    slider.addEventListener('input', function() {
+        output.textContent = this.value;
+    });
+</script>
+
+</body>
+</html>
